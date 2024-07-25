@@ -12,6 +12,9 @@
 		A912DF3A2C5292CA00D4AA70 /* SpeedTestCoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A912DF392C5292CA00D4AA70 /* SpeedTestCoreTests.swift */; };
 		A912DF432C5292E600D4AA70 /* Measurement.swift in Sources */ = {isa = PBXBuildFile; fileRef = A912DF422C5292E600D4AA70 /* Measurement.swift */; };
 		A912DF462C52934200D4AA70 /* ShellKit in Frameworks */ = {isa = PBXBuildFile; productRef = A912DF452C52934200D4AA70 /* ShellKit */; };
+		A912DF492C52D16400D4AA70 /* SpeedTester.swift in Sources */ = {isa = PBXBuildFile; fileRef = A912DF482C52D16400D4AA70 /* SpeedTester.swift */; };
+		A912DF4B2C52D18500D4AA70 /* NetworkQualitySpeedTester.swift in Sources */ = {isa = PBXBuildFile; fileRef = A912DF4A2C52D18500D4AA70 /* NetworkQualitySpeedTester.swift */; };
+		A912DF4D2C52D4E600D4AA70 /* NetworkQualitySpeedTestResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = A912DF4C2C52D4E600D4AA70 /* NetworkQualitySpeedTestResult.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -30,6 +33,9 @@
 		A912DF342C5292CA00D4AA70 /* SpeedTestCoreTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SpeedTestCoreTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A912DF392C5292CA00D4AA70 /* SpeedTestCoreTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeedTestCoreTests.swift; sourceTree = "<group>"; };
 		A912DF422C5292E600D4AA70 /* Measurement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Measurement.swift; sourceTree = "<group>"; };
+		A912DF482C52D16400D4AA70 /* SpeedTester.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeedTester.swift; sourceTree = "<group>"; };
+		A912DF4A2C52D18500D4AA70 /* NetworkQualitySpeedTester.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkQualitySpeedTester.swift; sourceTree = "<group>"; };
+		A912DF4C2C52D4E600D4AA70 /* NetworkQualitySpeedTestResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkQualitySpeedTestResult.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,8 +79,10 @@
 		A912DF2C2C5292CA00D4AA70 /* SpeedTestCore */ = {
 			isa = PBXGroup;
 			children = (
-				A912DF422C5292E600D4AA70 /* Measurement.swift */,
 				A912DF2E2C5292CA00D4AA70 /* SpeedTestCore.docc */,
+				A912DF472C52D15500D4AA70 /* NetworkQuality */,
+				A912DF422C5292E600D4AA70 /* Measurement.swift */,
+				A912DF482C52D16400D4AA70 /* SpeedTester.swift */,
 			);
 			path = SpeedTestCore;
 			sourceTree = "<group>";
@@ -85,6 +93,15 @@
 				A912DF392C5292CA00D4AA70 /* SpeedTestCoreTests.swift */,
 			);
 			path = SpeedTestCoreTests;
+			sourceTree = "<group>";
+		};
+		A912DF472C52D15500D4AA70 /* NetworkQuality */ = {
+			isa = PBXGroup;
+			children = (
+				A912DF4A2C52D18500D4AA70 /* NetworkQualitySpeedTester.swift */,
+				A912DF4C2C52D4E600D4AA70 /* NetworkQualitySpeedTestResult.swift */,
+			);
+			path = NetworkQuality;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -201,6 +218,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A912DF4D2C52D4E600D4AA70 /* NetworkQualitySpeedTestResult.swift in Sources */,
+				A912DF492C52D16400D4AA70 /* SpeedTester.swift in Sources */,
+				A912DF4B2C52D18500D4AA70 /* NetworkQualitySpeedTester.swift in Sources */,
 				A912DF432C5292E600D4AA70 /* Measurement.swift in Sources */,
 				A912DF2F2C5292CA00D4AA70 /* SpeedTestCore.docc in Sources */,
 			);
