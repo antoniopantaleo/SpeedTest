@@ -36,6 +36,7 @@
 		A912DF482C52D16400D4AA70 /* SpeedTester.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeedTester.swift; sourceTree = "<group>"; };
 		A912DF4A2C52D18500D4AA70 /* NetworkQualitySpeedTester.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkQualitySpeedTester.swift; sourceTree = "<group>"; };
 		A912DF4C2C52D4E600D4AA70 /* NetworkQualitySpeedTestResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkQualitySpeedTestResult.swift; sourceTree = "<group>"; };
+		A9B9E8232C54127700F77420 /* SpeedTestCore.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = SpeedTestCore.xctestplan; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,6 +92,7 @@
 			isa = PBXGroup;
 			children = (
 				A912DF392C5292CA00D4AA70 /* SpeedTestCoreTests.swift */,
+				A9B9E8232C54127700F77420 /* SpeedTestCore.xctestplan */,
 			);
 			path = SpeedTestCoreTests;
 			sourceTree = "<group>";

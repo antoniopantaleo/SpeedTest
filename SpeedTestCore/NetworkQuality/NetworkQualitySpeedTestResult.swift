@@ -19,6 +19,7 @@ struct NetworkQualitySpeedTestResult: Decodable {
     var toMeasurement: SpeedTestCore.Measurement? {
         let dateFormatter: ISO8601DateFormatter = {
             let dateFormatter = ISO8601DateFormatter()
+            dateFormatter.timeZone = TimeZone(abbreviation: "UTC")
             dateFormatter.formatOptions.insert(.withSpaceBetweenDateAndTime)
             dateFormatter.formatOptions.insert(.withFractionalSeconds)
             dateFormatter.formatOptions.remove(.withTimeZone)

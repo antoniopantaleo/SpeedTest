@@ -11,7 +11,7 @@ import SpeedTestCore
 
 final class SpeedTestCoreTests: XCTestCase {
     
-    func test_succesfullyDecodes() async throws {
+    func test_successfulSpeedTest_correctlyDecodesToDTO() async throws {
         let shell = FixedNetworkQualityShell()
         let sut = NetworkQualitySpeedTester(shell: shell)
         let result = try await sut.performSpeedTest()
@@ -19,10 +19,19 @@ final class SpeedTestCoreTests: XCTestCase {
         XCTAssertEqual(result.downlinkThroughput, 577723904)
         XCTAssertEqual(result.osVersion, "Version 14.5 (Build 23F79)")
         XCTAssertEqual(result.testEndpoint.absoluteString, "deber5-edge-bx-001.aaplimg.com")
-        // TODO: test date
+        let calendar = Calendar(identifier: .gregorian)
+        let timeZone = TimeZone(abbreviation: "UTC")!
+        let components = calendar.dateComponents(in: timeZone, from: result.startDate)
+        XCTAssertEqual(components.year, 2024)
+        XCTAssertEqual(components.month, 7)
+        XCTAssertEqual(components.day, 25)
+        XCTAssertEqual(components.hour, 20)
+        XCTAssertEqual(components.minute, 28)
+        XCTAssertEqual(components.second, 47)
+        XCTAssertEqual(components.nanosecond?.description.prefix(3), "259")
     }
     
-    func test_failure() async {
+    func test_failingSpeedTest_throwsError() async {
         let shell = AlwaysFailingNetworkQualityShell()
         let sut = NetworkQualitySpeedTester(shell: shell)
         do {
@@ -92,6 +101,4 @@ final class SpeedTestCoreTests: XCTestCase {
             """
         }
     }
-
-    
 }

@@ -1,0 +1,34 @@
+{
+  "configurations" : [
+    {
+      "id" : "E55770C3-318F-47EE-B03F-3B9AE38397FF",
+      "name" : "Configuration",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+    "codeCoverage" : {
+      "targets" : [
+        {
+          "containerPath" : "container:SpeedTest.xcodeproj",
+          "identifier" : "A912DF2A2C5292CA00D4AA70",
+          "name" : "SpeedTestCore"
+        }
+      ]
+    },
+    "testExecutionOrdering" : "random"
+  },
+  "testTargets" : [
+    {
+      "parallelizable" : true,
+      "target" : {
+        "containerPath" : "container:SpeedTest.xcodeproj",
+        "identifier" : "A912DF332C5292CA00D4AA70",
+        "name" : "SpeedTestCoreTests"
+      }
+    }
+  ],
+  "version" : 1
+}
