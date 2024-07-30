@@ -47,4 +47,24 @@ final class ViewModel {
         task?.cancel()
     }
     
+    func speedTestTime(
+        calendar: Calendar = Calendar(identifier: .gregorian),
+        locale: Locale = .current
+    ) -> String {
+        let fallback = "-"
+        guard let measurement else { return fallback }
+        let formatter: DateComponentsFormatter = {
+            let formatter = DateComponentsFormatter()
+            formatter.calendar = calendar
+            formatter.calendar?.locale = locale
+            formatter.allowedUnits = [.minute, .second]
+            formatter.unitsStyle = .abbreviated
+            return formatter
+        }()
+        return formatter.string(
+            from: measurement.startDate,
+            to: measurement.endDate
+        ) ?? fallback
+    }
+    
 }

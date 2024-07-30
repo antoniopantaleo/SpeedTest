@@ -107,6 +107,34 @@ final class ViewModelTests: XCTestCase {
         XCTAssertEqual(sut.measurement?.osVersion, "any version")
     }
     
+    func test_elapsedTime_rendersCorrectly() async {
+        // Given
+        let calendar = Calendar(identifier: .gregorian)
+        let locale = Locale(identifier: "it_IT")
+        let startDate = Date()
+        let fiveMinutesAndThirtySeconds: TimeInterval = 60 * 5 + 30
+        let endDate = Date().addingTimeInterval(fiveMinutesAndThirtySeconds)
+        let givenMeasurement = SpeedTestCore.Measurement(
+            downlinkThroughput: 150,
+            uplinkThroughput: 200,
+            startDate: startDate,
+            endDate: endDate,
+            testEndpoint: URL(string: "any.test.endpoint")!,
+            osVersion: "any version"
+        )
+        let (sut, spy) = makeSUT()
+        // When
+        sut.performSpeedTest()
+        await spy.complete(with: .success(givenMeasurement))
+        // Then
+        XCTAssertEqual(
+            sut.speedTestTime(
+                calendar: calendar, 
+                locale: locale
+            ), "5 min 30 s"
+        )
+    }
+    
     //MARK: Helpers
     
     private func makeSUT() -> (sut: ViewModel, speedTester: SpeedTesterSpy) {
