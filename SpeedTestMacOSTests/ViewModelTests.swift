@@ -37,6 +37,16 @@ final class ViewModelTests: XCTestCase {
         XCTAssertEqual(sut.state, .idle)
     }
     
+    func test_performSpeedTest_changeStateToFailureOnFailingSpeedTest() async {
+        // Given
+        let (sut, spy) = makeSUT()
+        // When
+        sut.performSpeedTest()
+        await spy.complete(with: .failure(anyError))
+        // Then
+        XCTAssertEqual(sut.state, .failure)
+    }
+    
     //MARK: Helpers
     
     private func makeSUT() -> (sut: ViewModel, speedTester: SpeedTesterSpy) {
@@ -54,6 +64,10 @@ final class ViewModelTests: XCTestCase {
             testEndpoint: URL(string: "http://any-url.com")!,
             osVersion: "any os version"
         )
+    }
+    
+    private var anyError: Error {
+        NSError(domain: "any error", code: 0)
     }
     
     private final class SpeedTesterSpy: SpeedTester {

@@ -20,6 +20,7 @@ final class ViewModel {
     enum State {
         case idle
         case loading
+        case failure
     }
     
     private(set) var state: State = .idle
@@ -27,8 +28,12 @@ final class ViewModel {
     func performSpeedTest() {
         state = .loading
         Task {
-            let _ = try! await speedTester.performSpeedTest()
-            state = .idle
+            do {
+                let _ = try await speedTester.performSpeedTest()
+                state = .idle
+            } catch {
+                state = .failure
+            }
         }
     }
     
