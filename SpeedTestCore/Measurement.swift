@@ -14,4 +14,20 @@ public struct Measurement {
     public let endDate: Date
     public let testEndpoint: URL
     public let osVersion: String
+    
+    init(
+        downlinkThroughput: Int,
+        uplinkThroughput: Int,
+        startDate: Date,
+        endDate: Date,
+        testEndpoint: URL,
+        osVersion: String
+    ) {
+        self.downlinkThroughput = downlinkThroughput
+        self.uplinkThroughput = uplinkThroughput
+        self.startDate = startDate
+        self.endDate = endDate
+        self.testEndpoint = testEndpoint
+        self.osVersion = osVersion
+    }
 }

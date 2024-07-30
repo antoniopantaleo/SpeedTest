@@ -6,9 +6,16 @@
 //
 
 import Foundation
+import SpeedTestCore
 
 @Observable
 final class ViewModel {
+    
+    private let speedTester: SpeedTester
+    
+    init(speedTester: SpeedTester) {
+        self.speedTester = speedTester
+    }
     
     enum State {
         case idle
@@ -19,6 +26,10 @@ final class ViewModel {
     
     func performSpeedTest() {
         state = .loading
+        Task {
+            let _ = try! await speedTester.performSpeedTest()
+            state = .idle
+        }
     }
     
 }
