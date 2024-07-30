@@ -142,11 +142,37 @@ final class ViewModelTests: XCTestCase {
         )
     }
     
+    func test_measurementBitrate_rendersCorrectly() async {
+        // Given
+        let startDate = Date()
+        let endDate = Date().addingTimeInterval(3600)
+        let givenMeasurement = SpeedTestCore.Measurement(
+            downlinkThroughput: 1024 * 1_000_000,
+            uplinkThroughput: 200,
+            startDate: startDate,
+            endDate: endDate,
+            testEndpoint: URL(string: "any.test.endpoint")!,
+            osVersion: "any version"
+        )
+        let (sut, spy) = makeSUT()
+        // When
+        sut.performSpeedTest()
+        await spy.complete(with: .success(givenMeasurement))
+        // Then
+        XCTAssertEqual(sut.downloadBitrate, "1,02 Gb/s")
+        XCTAssertEqual(sut.uploadBitrate, "200 b/s")
+    }
+    
     //MARK: Helpers
     
     private func makeSUT() -> (sut: ViewModel, speedTester: SpeedTesterSpy) {
         let spy = SpeedTesterSpy()
-        let sut = ViewModel(speedTester: spy)
+        let sut = ViewModel(
+            speedTester: spy,
+            bitrateFormatter: ByteCountBitrateFormatter(
+                locale: Locale(identifier: "it_IT")
+            )
+        )
         return (sut, spy)
     }
     

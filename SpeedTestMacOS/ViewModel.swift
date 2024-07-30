@@ -8,13 +8,54 @@
 import Foundation
 import SpeedTestCore
 
+protocol BitrateFormatter {
+    var locale: Locale { get }
+    func format(_ bits: Int) -> String
+}
+
+struct ByteCountBitrateFormatter: BitrateFormatter {
+    
+    let locale: Locale
+    
+    init(locale: Locale = .current) {
+        self.locale = locale
+    }
+    
+    private var formatter: ByteCountFormatStyle {
+        ByteCountFormatStyle(
+            style: .decimal,
+            allowedUnits: [.bytes, .kb, .mb, .gb, .tb],
+            locale: locale
+        )
+    }
+    
+    func format(_ bits: Int) -> String {
+        let formattedSize = formatter.format(Int64(bits))
+        let bytesRegex = /byte(?:s)?$/
+        let otherUnitsRegex = /B$/
+        var transformedSize = formattedSize
+        if let match = try? bytesRegex.firstMatch(in: formattedSize) {
+            transformedSize =  formattedSize.replacingCharacters(in: match.range, with: "b")
+        } else if let match = try? otherUnitsRegex.firstMatch(in: formattedSize) {
+            let lowercasedLetter = formattedSize[match.range].lowercased()
+            transformedSize =  formattedSize.replacingCharacters(in: match.range, with: lowercasedLetter)
+        }
+        return transformedSize + "/s"
+    }
+}
+
 @Observable
 final class ViewModel {
     
     private let speedTester: SpeedTester
+    private let bitrateFormatter: BitrateFormatter
     
-    init(speedTester: SpeedTester) {
+    init(
+        speedTester: SpeedTester,
+        bitrateFormatter: BitrateFormatter
+    ) {
         self.speedTester = speedTester
+        self.bitrateFormatter = bitrateFormatter
     }
     
     enum State {
@@ -25,6 +66,16 @@ final class ViewModel {
     
     private(set) var state: State = .idle
     private(set) var measurement: SpeedTestCore.Measurement?
+    
+    var downloadBitrate: String {
+        guard let measurement else { return "-" }
+        return bitrateFormatter.format(measurement.downlinkThroughput)
+    }
+    
+    var uploadBitrate: String {
+        guard let measurement else { return "-" }
+        return bitrateFormatter.format(measurement.uplinkThroughput)
+    }
     
     private var task: Task<Void, Never>?
     
