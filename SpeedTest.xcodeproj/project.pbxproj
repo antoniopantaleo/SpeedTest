@@ -172,10 +172,8 @@
 		A912DF532C52D5B800D4AA70 /* SpeedTestMacOS */ = {
 			isa = PBXGroup;
 			children = (
+				A9B7DF4A2C590F6000F38104 /* Resources */,
 				A912DF542C52D5B800D4AA70 /* SpeedTestMacOSApp.swift */,
-				A912DF5A2C52D5B900D4AA70 /* Assets.xcassets */,
-				A912DF5F2C52D5B900D4AA70 /* SpeedTestMacOS.entitlements */,
-				A912DF5C2C52D5B900D4AA70 /* Preview Content */,
 				A9D5FAC32C59026900C44172 /* ViewModel.swift */,
 			);
 			path = SpeedTestMacOS;
@@ -194,6 +192,16 @@
 			children = (
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		A9B7DF4A2C590F6000F38104 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				A912DF5C2C52D5B900D4AA70 /* Preview Content */,
+				A912DF5F2C52D5B900D4AA70 /* SpeedTestMacOS.entitlements */,
+				A912DF5A2C52D5B900D4AA70 /* Assets.xcassets */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 		A9D5FABB2C58C75900C44172 /* SpeedTestMacOSTests */ = {
@@ -661,11 +669,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = SpeedTestMacOS/SpeedTestMacOS.entitlements;
+				CODE_SIGN_ENTITLEMENTS = SpeedTestMacOS/Resources/SpeedTestMacOS.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"SpeedTestMacOS/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"SpeedTestMacOS/Resources/Preview Content\"";
 				DEVELOPMENT_TEAM = GGSASZ9YEF;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
@@ -689,11 +697,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = SpeedTestMacOS/SpeedTestMacOS.entitlements;
+				CODE_SIGN_ENTITLEMENTS = SpeedTestMacOS/Resources/SpeedTestMacOS.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"SpeedTestMacOS/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"SpeedTestMacOS/Resources/Preview Content\"";
 				DEVELOPMENT_TEAM = GGSASZ9YEF;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
