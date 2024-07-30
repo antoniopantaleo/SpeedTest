@@ -10,6 +10,12 @@ import XCTest
 
 final class ViewModelTests: XCTestCase {
     
+    func test_init_initialStateIsIdle() {
+        // Given
+        let sut = ViewModel()
+        // Then
+        XCTAssertEqual(sut.state, .idle)
+    }
     
 }
 

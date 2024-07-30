@@ -9,4 +9,11 @@ import Foundation
 
 @Observable
 final class ViewModel {
+    
+    enum State {
+        case idle
+    }
+    
+    private(set) var state: State = .idle
+    
 }
