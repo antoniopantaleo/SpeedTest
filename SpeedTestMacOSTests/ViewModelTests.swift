@@ -107,6 +107,13 @@ final class ViewModelTests: XCTestCase {
         XCTAssertEqual(sut.measurement?.osVersion, "any version")
     }
     
+    func test_elapsedTime_doesNotRenderForNoMeasurement() async {
+        // Given
+        let (sut, _) = makeSUT()
+        // Then
+        XCTAssertEqual(sut.speedTestTime(), "-")
+    }
+    
     func test_elapsedTime_rendersCorrectly() async {
         // Given
         let calendar = Calendar(identifier: .gregorian)
