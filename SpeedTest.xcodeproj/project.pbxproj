@@ -20,6 +20,8 @@
 		A912DF5E2C52D5B900D4AA70 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A912DF5D2C52D5B900D4AA70 /* Preview Assets.xcassets */; };
 		A912DF642C52D5C600D4AA70 /* SpeedTestCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A912DF2B2C5292CA00D4AA70 /* SpeedTestCore.framework */; };
 		A912DF652C52D5C600D4AA70 /* SpeedTestCore.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = A912DF2B2C5292CA00D4AA70 /* SpeedTestCore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		A9B7DF4D2C59336100F38104 /* BitrateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9B7DF4C2C59336100F38104 /* BitrateFormatter.swift */; };
+		A9B7DF4F2C59337300F38104 /* ByteCountBitrateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9B7DF4E2C59337300F38104 /* ByteCountBitrateFormatter.swift */; };
 		A9D5FABD2C58C75900C44172 /* ViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9D5FABC2C58C75900C44172 /* ViewModelTests.swift */; };
 		A9D5FAC42C59026900C44172 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9D5FAC32C59026900C44172 /* ViewModel.swift */; };
 /* End PBXBuildFile section */
@@ -76,6 +78,8 @@
 		A912DF5A2C52D5B900D4AA70 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A912DF5D2C52D5B900D4AA70 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		A912DF5F2C52D5B900D4AA70 /* SpeedTestMacOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SpeedTestMacOS.entitlements; sourceTree = "<group>"; };
+		A9B7DF4C2C59336100F38104 /* BitrateFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BitrateFormatter.swift; sourceTree = "<group>"; };
+		A9B7DF4E2C59337300F38104 /* ByteCountBitrateFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ByteCountBitrateFormatter.swift; sourceTree = "<group>"; };
 		A9B9E8232C54127700F77420 /* SpeedTestCore.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = SpeedTestCore.xctestplan; sourceTree = "<group>"; };
 		A9D5FABA2C58C75900C44172 /* SpeedTestMacOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SpeedTestMacOSTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A9D5FABC2C58C75900C44172 /* ViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelTests.swift; sourceTree = "<group>"; };
@@ -172,6 +176,7 @@
 		A912DF532C52D5B800D4AA70 /* SpeedTestMacOS */ = {
 			isa = PBXGroup;
 			children = (
+				A9B7DF4B2C59334B00F38104 /* BitrateFormatter */,
 				A9B7DF4A2C590F6000F38104 /* Resources */,
 				A912DF542C52D5B800D4AA70 /* SpeedTestMacOSApp.swift */,
 				A9D5FAC32C59026900C44172 /* ViewModel.swift */,
@@ -202,6 +207,15 @@
 				A912DF5A2C52D5B900D4AA70 /* Assets.xcassets */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		A9B7DF4B2C59334B00F38104 /* BitrateFormatter */ = {
+			isa = PBXGroup;
+			children = (
+				A9B7DF4C2C59336100F38104 /* BitrateFormatter.swift */,
+				A9B7DF4E2C59337300F38104 /* ByteCountBitrateFormatter.swift */,
+			);
+			path = BitrateFormatter;
 			sourceTree = "<group>";
 		};
 		A9D5FABB2C58C75900C44172 /* SpeedTestMacOSTests */ = {
@@ -410,6 +424,8 @@
 			files = (
 				A912DF552C52D5B800D4AA70 /* SpeedTestMacOSApp.swift in Sources */,
 				A9D5FAC42C59026900C44172 /* ViewModel.swift in Sources */,
+				A9B7DF4F2C59337300F38104 /* ByteCountBitrateFormatter.swift in Sources */,
+				A9B7DF4D2C59336100F38104 /* BitrateFormatter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
