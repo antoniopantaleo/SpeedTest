@@ -12,8 +12,13 @@ final class ViewModel {
     
     enum State {
         case idle
+        case loading
     }
     
     private(set) var state: State = .idle
+    
+    func performSpeedTest() {
+        state = .loading
+    }
     
 }

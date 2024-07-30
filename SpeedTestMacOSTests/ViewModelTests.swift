@@ -17,5 +17,14 @@ final class ViewModelTests: XCTestCase {
         XCTAssertEqual(sut.state, .idle)
     }
     
+    func test_performSpeedTest_changeStateToLoading() {
+        // Given
+        let sut = ViewModel()
+        // When
+        sut.performSpeedTest()
+        // Then
+        XCTAssertEqual(sut.state, .loading)
+    }
+    
 }
 
