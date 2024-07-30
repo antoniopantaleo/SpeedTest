@@ -126,8 +126,8 @@ final class ViewModelTests: XCTestCase {
             uplinkThroughput: 200,
             startDate: startDate,
             endDate: endDate,
-            testEndpoint: URL(string: "any.test.endpoint")!,
-            osVersion: "any version"
+            testEndpoint: anyUrl,
+            osVersion: anyOSVersion
         )
         let (sut, spy) = makeSUT()
         // When
@@ -144,15 +144,13 @@ final class ViewModelTests: XCTestCase {
     
     func test_measurementBitrate_rendersCorrectly() async {
         // Given
-        let startDate = Date()
-        let endDate = Date().addingTimeInterval(3600)
         let givenMeasurement = SpeedTestCore.Measurement(
             downlinkThroughput: 1024 * 1_000_000,
             uplinkThroughput: 200,
-            startDate: startDate,
-            endDate: endDate,
-            testEndpoint: URL(string: "any.test.endpoint")!,
-            osVersion: "any version"
+            startDate: anyDate,
+            endDate: anyDate,
+            testEndpoint: anyUrl,
+            osVersion: anyOSVersion
         )
         let (sut, spy) = makeSUT()
         // When
@@ -190,6 +188,10 @@ final class ViewModelTests: XCTestCase {
     private var anyError: Error {
         NSError(domain: "any error", code: 0)
     }
+    
+    private var anyDate: Date { Date() }
+    private var anyOSVersion: String { "any os vesrion" }
+    private var anyUrl: URL { URL(string: "any.url.com")!}
     
     private final class SpeedTesterSpy: SpeedTester {
         
