@@ -47,6 +47,17 @@ final class ViewModelTests: XCTestCase {
         XCTAssertEqual(sut.state, .failure)
     }
     
+    func test_cancelSpeedTest_doesNotUpdateMeasurementAfterCompletion() async {
+        // Given
+        let (sut, spy) = makeSUT()
+        // When
+        sut.performSpeedTest()
+        sut.cancelRunningSpeedTest()
+        await spy.complete(with: .success(anyMeasurement))
+        // Then
+        XCTAssertNil(sut.measurement)
+    }
+    
     func test_performSpeedTest_savesMeasurementAfterSuccessfullSpeedTest() async {
         // Given
         let startDate = Date()

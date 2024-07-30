@@ -26,17 +26,25 @@ final class ViewModel {
     private(set) var state: State = .idle
     private(set) var measurement: SpeedTestCore.Measurement?
     
+    private var task: Task<Void, Never>?
+    
     func performSpeedTest() {
         state = .loading
-        Task {
+        task = Task {
+            defer { task = nil }
             do {
                 let measurement = try await speedTester.performSpeedTest()
-                self.measurement = measurement
                 state = .idle
+                if task?.isCancelled == true { return }
+                self.measurement = measurement
             } catch {
                 state = .failure
             }
         }
+    }
+    
+    func cancelRunningSpeedTest() {
+        task?.cancel()
     }
     
 }
