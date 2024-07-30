@@ -24,12 +24,14 @@ final class ViewModel {
     }
     
     private(set) var state: State = .idle
+    private(set) var measurement: SpeedTestCore.Measurement?
     
     func performSpeedTest() {
         state = .loading
         Task {
             do {
-                let _ = try await speedTester.performSpeedTest()
+                let measurement = try await speedTester.performSpeedTest()
+                self.measurement = measurement
                 state = .idle
             } catch {
                 state = .failure

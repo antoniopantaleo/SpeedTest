@@ -47,6 +47,31 @@ final class ViewModelTests: XCTestCase {
         XCTAssertEqual(sut.state, .failure)
     }
     
+    func test_performSpeedTest_savesMeasurementAfterSuccessfullSpeedTest() async {
+        // Given
+        let startDate = Date()
+        let endDate = Date().addingTimeInterval(3600)
+        let givenMeasurement = SpeedTestCore.Measurement(
+            downlinkThroughput: 150,
+            uplinkThroughput: 200,
+            startDate: startDate,
+            endDate: endDate,
+            testEndpoint: URL(string: "any.test.endpoint")!,
+            osVersion: "any version"
+        )
+        let (sut, spy) = makeSUT()
+        // When
+        sut.performSpeedTest()
+        await spy.complete(with: .success(givenMeasurement))
+        // Then
+        XCTAssertEqual(sut.measurement?.downlinkThroughput, 150)
+        XCTAssertEqual(sut.measurement?.uplinkThroughput, 200)
+        XCTAssertEqual(sut.measurement?.startDate, startDate)
+        XCTAssertEqual(sut.measurement?.endDate, endDate)
+        XCTAssertEqual(sut.measurement?.testEndpoint, URL(string: "any.test.endpoint"))
+        XCTAssertEqual(sut.measurement?.osVersion, "any version")
+    }
+    
     //MARK: Helpers
     
     private func makeSUT() -> (sut: ViewModel, speedTester: SpeedTesterSpy) {
