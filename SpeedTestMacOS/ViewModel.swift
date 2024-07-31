@@ -50,9 +50,10 @@ final class ViewModel {
             do {
                 let measurement = try await speedTester.performSpeedTest()
                 state = .idle
-                if task?.isCancelled == true { return }
+                if Task.isCancelled { return }
                 self.measurement = measurement
             } catch {
+                guard !Task.isCancelled else { return }
                 state = .failure
             }
         }
@@ -60,6 +61,7 @@ final class ViewModel {
     
     func cancelRunningSpeedTest() {
         task?.cancel()
+        state = .idle
     }
     
     func speedTestTime(
