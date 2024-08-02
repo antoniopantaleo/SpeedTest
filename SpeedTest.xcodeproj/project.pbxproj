@@ -7,15 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		070970942CDD296F00AE07B8 /* ShellKit in Frameworks */ = {isa = PBXBuildFile; productRef = 070970932CDD296F00AE07B8 /* ShellKit */; };
 		A912DF2F2C5292CA00D4AA70 /* SpeedTestCore.docc in Sources */ = {isa = PBXBuildFile; fileRef = A912DF2E2C5292CA00D4AA70 /* SpeedTestCore.docc */; };
 		A912DF352C5292CA00D4AA70 /* SpeedTestCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A912DF2B2C5292CA00D4AA70 /* SpeedTestCore.framework */; };
 		A912DF3A2C5292CA00D4AA70 /* SpeedTestCoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A912DF392C5292CA00D4AA70 /* SpeedTestCoreTests.swift */; };
 		A912DF432C5292E600D4AA70 /* Measurement.swift in Sources */ = {isa = PBXBuildFile; fileRef = A912DF422C5292E600D4AA70 /* Measurement.swift */; };
-		A912DF462C52934200D4AA70 /* ShellKit in Frameworks */ = {isa = PBXBuildFile; productRef = A912DF452C52934200D4AA70 /* ShellKit */; };
 		A912DF492C52D16400D4AA70 /* SpeedTester.swift in Sources */ = {isa = PBXBuildFile; fileRef = A912DF482C52D16400D4AA70 /* SpeedTester.swift */; };
 		A912DF4B2C52D18500D4AA70 /* NetworkQualitySpeedTester.swift in Sources */ = {isa = PBXBuildFile; fileRef = A912DF4A2C52D18500D4AA70 /* NetworkQualitySpeedTester.swift */; };
 		A912DF4D2C52D4E600D4AA70 /* NetworkQualitySpeedTestResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = A912DF4C2C52D4E600D4AA70 /* NetworkQualitySpeedTestResult.swift */; };
 		A912DF552C52D5B800D4AA70 /* SpeedTestMacOSApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A912DF542C52D5B800D4AA70 /* SpeedTestMacOSApp.swift */; };
+		A912DF572C52D5B800D4AA70 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A912DF562C52D5B800D4AA70 /* ContentView.swift */; };
 		A912DF5B2C52D5B900D4AA70 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A912DF5A2C52D5B900D4AA70 /* Assets.xcassets */; };
 		A912DF5E2C52D5B900D4AA70 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A912DF5D2C52D5B900D4AA70 /* Preview Assets.xcassets */; };
 		A912DF642C52D5C600D4AA70 /* SpeedTestCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A912DF2B2C5292CA00D4AA70 /* SpeedTestCore.framework */; };
@@ -24,6 +25,7 @@
 		A9B7DF4F2C59337300F38104 /* ByteCountBitrateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9B7DF4E2C59337300F38104 /* ByteCountBitrateFormatter.swift */; };
 		A9D5FABD2C58C75900C44172 /* ViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9D5FABC2C58C75900C44172 /* ViewModelTests.swift */; };
 		A9D5FAC42C59026900C44172 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9D5FAC32C59026900C44172 /* ViewModel.swift */; };
+		A9D9B08A2C538B210003C76E /* GaugeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9D9B0892C538B210003C76E /* GaugeView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -75,6 +77,7 @@
 		A912DF4C2C52D4E600D4AA70 /* NetworkQualitySpeedTestResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkQualitySpeedTestResult.swift; sourceTree = "<group>"; };
 		A912DF522C52D5B800D4AA70 /* SpeedTestMacOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SpeedTestMacOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A912DF542C52D5B800D4AA70 /* SpeedTestMacOSApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeedTestMacOSApp.swift; sourceTree = "<group>"; };
+		A912DF562C52D5B800D4AA70 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		A912DF5A2C52D5B900D4AA70 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A912DF5D2C52D5B900D4AA70 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		A912DF5F2C52D5B900D4AA70 /* SpeedTestMacOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SpeedTestMacOS.entitlements; sourceTree = "<group>"; };
@@ -84,6 +87,7 @@
 		A9D5FABA2C58C75900C44172 /* SpeedTestMacOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SpeedTestMacOSTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A9D5FABC2C58C75900C44172 /* ViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelTests.swift; sourceTree = "<group>"; };
 		A9D5FAC32C59026900C44172 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
+		A9D9B0892C538B210003C76E /* GaugeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GaugeView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,7 +95,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A912DF462C52934200D4AA70 /* ShellKit in Frameworks */,
+				070970942CDD296F00AE07B8 /* ShellKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -179,6 +183,10 @@
 				A9B7DF4B2C59334B00F38104 /* BitrateFormatter */,
 				A9B7DF4A2C590F6000F38104 /* Resources */,
 				A912DF542C52D5B800D4AA70 /* SpeedTestMacOSApp.swift */,
+				A912DF562C52D5B800D4AA70 /* ContentView.swift */,
+				A912DF5A2C52D5B900D4AA70 /* Assets.xcassets */,
+				A912DF5F2C52D5B900D4AA70 /* SpeedTestMacOS.entitlements */,
+				A9D9B0892C538B210003C76E /* GaugeView.swift */,
 				A9D5FAC32C59026900C44172 /* ViewModel.swift */,
 			);
 			path = SpeedTestMacOS;
@@ -203,8 +211,6 @@
 			isa = PBXGroup;
 			children = (
 				A912DF5C2C52D5B900D4AA70 /* Preview Content */,
-				A912DF5F2C52D5B900D4AA70 /* SpeedTestMacOS.entitlements */,
-				A912DF5A2C52D5B900D4AA70 /* Assets.xcassets */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -254,7 +260,7 @@
 			);
 			name = SpeedTestCore;
 			packageProductDependencies = (
-				A912DF452C52934200D4AA70 /* ShellKit */,
+				070970932CDD296F00AE07B8 /* ShellKit */,
 			);
 			productName = SpeedTestCore;
 			productReference = A912DF2B2C5292CA00D4AA70 /* SpeedTestCore.framework */;
@@ -350,7 +356,7 @@
 			);
 			mainGroup = A912DF022C52926100D4AA70;
 			packageReferences = (
-				A912DF442C52934200D4AA70 /* XCRemoteSwiftPackageReference "ShellKit" */,
+				070970922CDD296F00AE07B8 /* XCRemoteSwiftPackageReference "ShellKit" */,
 			);
 			productRefGroup = A912DF0D2C52926100D4AA70 /* Products */;
 			projectDirPath = "";
@@ -422,6 +428,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A912DF572C52D5B800D4AA70 /* ContentView.swift in Sources */,
+				A9D9B08A2C538B210003C76E /* GaugeView.swift in Sources */,
 				A912DF552C52D5B800D4AA70 /* SpeedTestMacOSApp.swift in Sources */,
 				A9D5FAC42C59026900C44172 /* ViewModel.swift in Sources */,
 				A9B7DF4F2C59337300F38104 /* ByteCountBitrateFormatter.swift in Sources */,
@@ -828,7 +836,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		A912DF442C52934200D4AA70 /* XCRemoteSwiftPackageReference "ShellKit" */ = {
+		070970922CDD296F00AE07B8 /* XCRemoteSwiftPackageReference "ShellKit" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/antoniopantaleo/ShellKit";
 			requirement = {
@@ -839,9 +847,9 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		A912DF452C52934200D4AA70 /* ShellKit */ = {
+		070970932CDD296F00AE07B8 /* ShellKit */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = A912DF442C52934200D4AA70 /* XCRemoteSwiftPackageReference "ShellKit" */;
+			package = 070970922CDD296F00AE07B8 /* XCRemoteSwiftPackageReference "ShellKit" */;
 			productName = ShellKit;
 		};
 /* End XCSwiftPackageProductDependency section */

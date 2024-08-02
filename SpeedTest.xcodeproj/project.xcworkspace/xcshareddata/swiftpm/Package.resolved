@@ -1,5 +1,4 @@
 {
-  "originHash" : "47172ebdecd5d0fbbbc7b41dbc0bb8b5da8e61290771c63a201adce2d5ba01b6",
   "pins" : [
     {
       "identity" : "shellkit",
@@ -11,5 +10,5 @@
       }
     }
   ],
-  "version" : 3
+  "version" : 2
 }

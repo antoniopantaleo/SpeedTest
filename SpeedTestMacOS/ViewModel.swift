@@ -28,6 +28,7 @@ final class ViewModel {
         case failure
     }
     
+    private(set) var isLoading: Bool = false
     private(set) var state: State = .idle
     private(set) var measurement: SpeedTestCore.Measurement?
     
@@ -45,15 +46,20 @@ final class ViewModel {
     
     func performSpeedTest() {
         state = .loading
+        isLoading = true
+        measurement = nil
         task = Task {
-            defer { task = nil }
+            defer {
+                task = nil
+                isLoading = false
+            }
             do {
                 let measurement = try await speedTester.performSpeedTest()
                 state = .idle
-                if Task.isCancelled { return }
+                if task?.isCancelled == true { return }
                 self.measurement = measurement
             } catch {
-                guard !Task.isCancelled else { return }
+                guard task?.isCancelled == false else { return }
                 state = .failure
             }
         }
@@ -61,6 +67,7 @@ final class ViewModel {
     
     func cancelRunningSpeedTest() {
         task?.cancel()
+        isLoading = false
         state = .idle
     }
     
