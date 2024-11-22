@@ -12,8 +12,11 @@ import SpeedTestCore
 @main
 struct SpeedTestMacOSApp: App {
     
+    init() {
+        NSWindow.allowsAutomaticWindowTabbing = false
+    }
+    
     var body: some Scene {
-        
         WindowGroup {
                 ContentView(
                     viewModel: ViewModel(
