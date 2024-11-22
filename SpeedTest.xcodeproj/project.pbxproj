@@ -26,7 +26,6 @@
 		A9B7DF4F2C59337300F38104 /* ByteCountBitrateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9B7DF4E2C59337300F38104 /* ByteCountBitrateFormatter.swift */; };
 		A9D5FABD2C58C75900C44172 /* ViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9D5FABC2C58C75900C44172 /* ViewModelTests.swift */; };
 		A9D5FAC42C59026900C44172 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9D5FAC32C59026900C44172 /* ViewModel.swift */; };
-		A9D9B08A2C538B210003C76E /* GaugeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9D9B0892C538B210003C76E /* GaugeView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -90,7 +89,6 @@
 		A9D5FABA2C58C75900C44172 /* SpeedTestMacOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SpeedTestMacOSTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A9D5FABC2C58C75900C44172 /* ViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelTests.swift; sourceTree = "<group>"; };
 		A9D5FAC32C59026900C44172 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
-		A9D9B0892C538B210003C76E /* GaugeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GaugeView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -187,7 +185,6 @@
 				A9B7DF4A2C590F6000F38104 /* Resources */,
 				A912DF542C52D5B800D4AA70 /* SpeedTestMacOSApp.swift */,
 				A912DF562C52D5B800D4AA70 /* ContentView.swift */,
-				A9D9B0892C538B210003C76E /* GaugeView.swift */,
 				A9D5FAC32C59026900C44172 /* ViewModel.swift */,
 			);
 			path = SpeedTestMacOS;
@@ -435,7 +432,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				A912DF572C52D5B800D4AA70 /* ContentView.swift in Sources */,
-				A9D9B08A2C538B210003C76E /* GaugeView.swift in Sources */,
 				A912DF552C52D5B800D4AA70 /* SpeedTestMacOSApp.swift in Sources */,
 				A9D5FAC42C59026900C44172 /* ViewModel.swift in Sources */,
 				A9B7DF4F2C59337300F38104 /* ByteCountBitrateFormatter.swift in Sources */,
