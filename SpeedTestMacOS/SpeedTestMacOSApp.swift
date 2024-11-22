@@ -39,6 +39,7 @@ struct SpeedTestMacOSApp: App {
                 Button(action: action) {
                     isLoading ? Text("Cancel") : Text("Run")
                 }
+                .keyboardShortcut(isLoading ? "." : "R", modifiers: [.command])
             }
         }
     }
