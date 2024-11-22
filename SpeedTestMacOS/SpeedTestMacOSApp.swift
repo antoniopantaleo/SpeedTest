@@ -12,26 +12,35 @@ import SpeedTestCore
 @main
 struct SpeedTestMacOSApp: App {
     
+    private let viewModel: ViewModel
     init() {
         NSWindow.allowsAutomaticWindowTabbing = false
+        viewModel = ViewModel(
+            speedTester: NetworkQualitySpeedTester(
+                shell: EnvironmentShell()
+            ),
+            bitrateFormatter: ByteCountBitrateFormatter()
+        )
     }
     
     var body: some Scene {
         WindowGroup {
-                ContentView(
-                    viewModel: ViewModel(
-                        speedTester: NetworkQualitySpeedTester(
-                            shell: EnvironmentShell()
-                        ),
-                        bitrateFormatter: ByteCountBitrateFormatter()
-                    )
-                )
+            ContentView(viewModel: viewModel)
                 .padding()
                 .frame(width: 350, height: 500)
                 .blurredBackground(.clear)
         }
         .windowResizability(.contentSize)
         .windowStyle(.hiddenTitleBar)
+        .commands{
+            CommandGroup(replacing: .newItem) {
+                let isLoading = viewModel.isLoading
+                let action = isLoading ? viewModel.cancelRunningSpeedTest : viewModel.performSpeedTest
+                Button(action: action) {
+                    isLoading ? Text("Cancel") : Text("Run")
+                }
+            }
+        }
     }
 }
 
