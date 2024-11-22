@@ -176,7 +176,6 @@ struct ResultView: View {
 
 #if DEBUG
 import ShellKit
-import TipKit
 
 fileprivate struct PreviewContentView: View {
     
