@@ -1,0 +1,32 @@
+{
+  "configurations" : [
+    {
+      "id" : "5610BFAC-89E8-4118-9494-7D3875B2669C",
+      "name" : "Configuration",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+    "codeCoverage" : {
+      "targets" : [
+        {
+          "containerPath" : "container:SpeedTest.xcodeproj",
+          "identifier" : "A912DF512C52D5B800D4AA70",
+          "name" : "SpeedTestMacOS"
+        }
+      ]
+    }
+  },
+  "testTargets" : [
+    {
+      "target" : {
+        "containerPath" : "container:SpeedTest.xcodeproj",
+        "identifier" : "A9D5FAB92C58C75900C44172",
+        "name" : "SpeedTestMacOSTests"
+      }
+    }
+  ],
+  "version" : 1
+}

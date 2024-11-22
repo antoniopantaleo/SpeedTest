@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		070970942CDD296F00AE07B8 /* ShellKit in Frameworks */ = {isa = PBXBuildFile; productRef = 070970932CDD296F00AE07B8 /* ShellKit */; };
 		07F9783C2CF092F00001BA04 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 07F9783B2CF092F00001BA04 /* Assets.xcassets */; };
+		07F978402CF094010001BA04 /* SpeedTestMacOS.xctestplan in Resources */ = {isa = PBXBuildFile; fileRef = 07F9783F2CF094010001BA04 /* SpeedTestMacOS.xctestplan */; };
 		A912DF2F2C5292CA00D4AA70 /* SpeedTestCore.docc in Sources */ = {isa = PBXBuildFile; fileRef = A912DF2E2C5292CA00D4AA70 /* SpeedTestCore.docc */; };
 		A912DF352C5292CA00D4AA70 /* SpeedTestCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A912DF2B2C5292CA00D4AA70 /* SpeedTestCore.framework */; };
 		A912DF3A2C5292CA00D4AA70 /* SpeedTestCoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A912DF392C5292CA00D4AA70 /* SpeedTestCoreTests.swift */; };
@@ -69,6 +70,8 @@
 /* Begin PBXFileReference section */
 		07F9783B2CF092F00001BA04 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		07F9783D2CF092FE0001BA04 /* SpeedTestMacOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SpeedTestMacOS.entitlements; sourceTree = "<group>"; };
+		07F9783E2CF093D80001BA04 /* SpeedTestMacOS.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; name = SpeedTestMacOS.xctestplan; path = SpeedTestMacOSTests/SpeedTestMacOS.xctestplan; sourceTree = "<group>"; };
+		07F9783F2CF094010001BA04 /* SpeedTestMacOS.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = SpeedTestMacOS.xctestplan; sourceTree = "<group>"; };
 		A912DF2B2C5292CA00D4AA70 /* SpeedTestCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SpeedTestCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A912DF2E2C5292CA00D4AA70 /* SpeedTestCore.docc */ = {isa = PBXFileReference; lastKnownFileType = folder.documentationcatalog; path = SpeedTestCore.docc; sourceTree = "<group>"; };
 		A912DF342C5292CA00D4AA70 /* SpeedTestCoreTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SpeedTestCoreTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -201,6 +204,7 @@
 		A912DF632C52D5C600D4AA70 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				07F9783E2CF093D80001BA04 /* SpeedTestMacOS.xctestplan */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -227,6 +231,7 @@
 		A9D5FABB2C58C75900C44172 /* SpeedTestMacOSTests */ = {
 			isa = PBXGroup;
 			children = (
+				07F9783F2CF094010001BA04 /* SpeedTestMacOS.xctestplan */,
 				A9D5FABC2C58C75900C44172 /* ViewModelTests.swift */,
 			);
 			path = SpeedTestMacOSTests;
@@ -398,6 +403,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				07F978402CF094010001BA04 /* SpeedTestMacOS.xctestplan in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
