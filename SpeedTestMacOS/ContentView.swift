@@ -196,33 +196,44 @@ fileprivate struct PreviewContentView: View {
 
 }
 
+import Combine
+
+@Observable
+final class GaugeViewModel {
+    
+    private(set) var value: CGFloat = 100
+    private var cancellable: AnyCancellable?
+    
+    init() {
+        cancellable = Timer.publish(
+            every: 1,
+            on: .main,
+            in: .common
+        ).autoconnect()
+            .sink { [weak self] _ in
+                self?.value = CGFloat(Int.random(in: 0...100))
+            }
+    }
+    
+}
+
 fileprivate struct GaugeLoaderView: View {
-    @State private var value: CGFloat = 100
+    @State private var viewModel = GaugeViewModel()
     
     var body: some View {
         VStack {
             Gauge(
-                value: value,
+                value: viewModel.value,
                 in: 0...100,
                 label: {
                     Text("Mb/s")
                 },
                 currentValueLabel: {
-                    Text(value, format: .number)
+                    Text(viewModel.value, format: .number)
                         .contentTransition(.numericText())
                 }
             )
-            .onAppear {
-                Timer.scheduledTimer(
-                    withTimeInterval: 1,
-                    repeats: true,
-                    block: { _ in
-                        withAnimation(.bouncy) {
-                            value = CGFloat(Int.random(in: 0...100))
-                        }
-                    }
-                )
-            }
+            .animation(.bouncy, value: viewModel.value)
             .gaugeStyle(SpeedometerGaugeStyle())
             .padding()
         }
