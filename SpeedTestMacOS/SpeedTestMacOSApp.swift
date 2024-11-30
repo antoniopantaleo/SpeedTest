@@ -33,7 +33,7 @@ struct SpeedTestMacOSApp: App {
         .windowResizability(.contentSize)
         .windowStyle(.hiddenTitleBar)
         .commands{
-            CommandGroup(replacing: .newItem) {
+            CommandGroup(replacing: .newItem) { @MainActor in
                 let isLoading = viewModel.isLoading
                 let action = isLoading ? viewModel.cancelRunningSpeedTest : viewModel.performSpeedTest
                 Button(action: action) {
