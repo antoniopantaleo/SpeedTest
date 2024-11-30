@@ -6,11 +6,7 @@
 //
 
 import SwiftUI
-#if DEBUG
-@testable import SpeedTestCore
-#else
 import SpeedTestCore
-#endif
 
 struct ContentView: View {
     @State private var vm: ViewModel
@@ -122,60 +118,11 @@ struct ContentView: View {
 }
 
 #if DEBUG
-import ShellKit
-
-fileprivate struct PreviewContentView: View {
-    
-    private let viewModel = ViewModel(
+#Preview {
+    let viewModel = ViewModel(
         speedTester: FakeSpeedTester(latency: .exactely(5)),
         bitrateFormatter: ByteCountBitrateFormatter()
     )
-    var body: some View {
-        ContentView(
-            viewModel: viewModel
-        )
-    }
-}
-
-#Preview {
-    PreviewContentView()
-        .frame(width: 350, height: 500)
-}
-
-fileprivate class FakeSpeedTester: SpeedTester {
-    
-    enum Latency {
-        case immediate
-        case exactely(Int)
-        case infinite
-        
-        var value: Int {
-            switch self {
-            case .immediate: 0
-            case let .exactely(value): value
-            case .infinite: Int.max
-            }
-        }
-    }
-    
-    private let latency: Latency
-    
-    init(latency: Latency) {
-        self.latency = latency
-    }
-    
-    
-    func performSpeedTest() async throws -> SpeedTestCore.Measurement {
-        try await Task.sleep(for: .seconds(latency.value))
-        return .init(
-            downlinkThroughput: 543555550,
-            uplinkThroughput: 15555340,
-            startDate: .now,
-            endDate: .now,
-            testEndpoint: URL(string: "https://any-url.com")!,
-            osVersion: "Version"
-        )
-    }
-    
+    ContentView(viewModel: viewModel)       
 }
 #endif

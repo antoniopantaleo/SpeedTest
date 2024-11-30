@@ -95,7 +95,8 @@ fileprivate struct SpeedometerGaugeStyle: GaugeStyle {
 
 }
 
+#if DEBUG
 #Preview {
     GaugeLoaderView()
-        
 }
+#endif
