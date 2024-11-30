@@ -49,10 +49,7 @@ final class ViewModel {
         isLoading = true
         measurement = nil
         task = Task {
-            defer {
-                task = nil
-                isLoading = false
-            }
+            defer { task = nil }
             do {
                 let measurement = try await speedTester.performSpeedTest()
                 state = .idle
@@ -61,6 +58,9 @@ final class ViewModel {
             } catch {
                 guard task?.isCancelled == false else { return }
                 state = .failure
+            }
+            await MainActor.run { [weak self] in
+                self?.isLoading = false
             }
         }
     }
