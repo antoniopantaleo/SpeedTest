@@ -99,7 +99,13 @@ struct ContentView: View {
                             .padding(.horizontal)
                         Button(action: vm.cancelRunningSpeedTest) {
                             Text("Cancel")
+                                .padding(.horizontal)
+                                .padding(.vertical, 5)
+                                .background(.purple.gradient.opacity(0.5))
+                                .clipShape(Capsule(style: .continuous))
+                                .shadow(radius: 5)
                         }
+                        .buttonStyle(.borderless)
                         .padding(.top, 230)
                     }
                     .scaleEffect(vm.isLoading ? 1 : 5)
