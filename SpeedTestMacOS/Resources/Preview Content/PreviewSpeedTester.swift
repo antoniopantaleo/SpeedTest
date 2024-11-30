@@ -1,5 +1,5 @@
 //
-//  FakeSpeedTester.swift
+//  PreviewSpeedTester.swift
 //  SpeedTest
 //
 //  Created by Antonio Pantaleo on 30/11/24.
@@ -11,7 +11,7 @@ import Foundation
 @testable import SpeedTestCore
 import ShellKit
 
-final class FakeSpeedTester: SpeedTester {
+final class PreviewSpeedTester: SpeedTester {
     
     enum Latency {
         case immediate

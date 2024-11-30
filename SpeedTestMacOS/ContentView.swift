@@ -120,7 +120,7 @@ struct ContentView: View {
 #if DEBUG
 #Preview {
     let viewModel = ViewModel(
-        speedTester: FakeSpeedTester(latency: .exactely(5)),
+        speedTester: PreviewSpeedTester(latency: .exactely(5)),
         bitrateFormatter: ByteCountBitrateFormatter()
     )
     ContentView(viewModel: viewModel)       
