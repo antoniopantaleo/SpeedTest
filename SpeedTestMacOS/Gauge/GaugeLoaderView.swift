@@ -70,16 +70,40 @@ fileprivate struct SpeedometerGaugeStyle: GaugeStyle {
                     )
                     .rotationEffect(.degrees(135))
                 
-                Capsule()
-                    .frame(
-                        width: 10,
-                        height: geo.size.height / 3.5
+                Path { path in
+                    let center = CGPoint(
+                        x: geo.size.width / 2,
+                        y: geo.size.height / 2
                     )
-                    .rotationEffect(
-                        .degrees(angle(configuration)),
-                        anchor: .bottom
+                    let diameter: CGFloat = 20
+                    path.addArc(
+                        center: CGPoint(
+                            x: center.x,
+                            y: center.y + diameter / 2
+                        ),
+                        radius: diameter / 2,
+                        startAngle: .degrees(0),
+                        endAngle: .degrees(360),
+                        clockwise: true
                     )
-                    .padding(.bottom, geo.size.height / 4)
+                    path.move(to: CGPoint(
+                        x: center.x + diameter / 2,
+                        y: center.y + diameter / 2
+                    ))
+                    path.addLine(to: CGPoint(
+                        x: center.x,
+                        y: center.y - geo.size.height / 3.5
+                    ))
+                    path.addLine(to: CGPoint(
+                        x: center.x - diameter / 2,
+                        y: center.y + diameter / 2
+                    ))
+                }
+                .foregroundStyle(.white.gradient)
+                .rotationEffect(
+                    .degrees(angle(configuration)),
+                    anchor: .center
+                )
             }
             .position(
                 x: geo.frame(in: .local).midX,
