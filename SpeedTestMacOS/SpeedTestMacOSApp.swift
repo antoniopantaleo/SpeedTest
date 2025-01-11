@@ -11,8 +11,9 @@ import SpeedTestCore
 
 @main
 struct SpeedTestMacOSApp: App {
-    
     private let viewModel: ViewModel
+    private let loaderViewModel: GaugeViewModel
+    
     init() {
         NSWindow.allowsAutomaticWindowTabbing = false
         viewModel = ViewModel(
@@ -21,11 +22,15 @@ struct SpeedTestMacOSApp: App {
             ),
             bitrateFormatter: ByteCountBitrateFormatter()
         )
+        loaderViewModel = GaugeViewModel()
     }
     
     var body: some Scene {
         WindowGroup {
-            ContentView(viewModel: viewModel)
+            ContentView(
+                viewModel: viewModel,
+                loaderViewModel: loaderViewModel
+            )
                 .padding()
                 .frame(width: 350, height: 500)
                 .blurredBackground(.clear)

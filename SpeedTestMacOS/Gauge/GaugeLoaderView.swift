@@ -8,26 +8,28 @@
 import SwiftUI
 
 struct GaugeLoaderView: View {
-    @State private var viewModel = GaugeViewModel()
+    @State private var viewModel: GaugeViewModel
+    
+    init(viewModel: GaugeViewModel) {
+        self._viewModel = State(initialValue: viewModel)
+    }
     
     var body: some View {
-        VStack {
-            Gauge(
-                value: viewModel.value,
-                in: 0...100,
-                label: {
-                    Text("Mb/s")
-                },
-                currentValueLabel: {
-                    Text(viewModel.value, format: .number)
-                        .contentTransition(.numericText())
-                }
-            )
-            .animation(.bouncy, value: viewModel.value)
-            .gaugeStyle(SpeedometerGaugeStyle())
-            .padding()
-        }
-        
+        Gauge(
+            value: viewModel.value,
+            in: 0...100,
+            label: {
+                Text("Mb/s")
+            },
+            currentValueLabel: {
+                Text(viewModel.value, format: .number)
+                    .contentTransition(.numericText())
+            }
+        )
+        .allowsHitTesting(false)
+        .animation(.bouncy, value: viewModel.value)
+        .gaugeStyle(SpeedometerGaugeStyle())
+        .padding()
     }
 }
 
@@ -75,7 +77,7 @@ fileprivate struct SpeedometerGaugeStyle: GaugeStyle {
                         x: geo.size.width / 2,
                         y: geo.size.height / 2
                     )
-                    let diameter: CGFloat = 20
+                    let diameter: CGFloat = geo.size.height / 10
                     path.addArc(
                         center: CGPoint(
                             x: center.x,
@@ -120,7 +122,16 @@ fileprivate struct SpeedometerGaugeStyle: GaugeStyle {
 }
 
 #if DEBUG
-#Preview {
-    GaugeLoaderView()
+#Preview("GaugeLoaderView") {
+    GaugeLoaderView(
+        viewModel: GaugeViewModel()
+    )
+}
+
+#Preview("Moving GaugeLoaderView") {
+    let viewModel = GaugeViewModel()
+    GaugeLoaderView(
+        viewModel: viewModel
+    ).onAppear(perform: viewModel.startTimer)
 }
 #endif

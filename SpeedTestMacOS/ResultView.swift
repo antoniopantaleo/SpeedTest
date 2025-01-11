@@ -69,9 +69,13 @@ struct ResultView: View {
 #if DEBUG
 #Preview {
     @Previewable @State var viewModel = ViewModel(
-        speedTester: PreviewSpeedTester(latency: .exactely(5)),
+        speedTester: PreviewSpeedTester(
+            latency: .immediate,
+            outcome: .success
+        ),
         bitrateFormatter: ByteCountBitrateFormatter()
     )
     ResultView(viewModel: $viewModel)
+        .onAppear(perform: viewModel.performSpeedTest)
 }
 #endif

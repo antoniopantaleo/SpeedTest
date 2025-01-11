@@ -11,10 +11,10 @@ import Combine
 @Observable
 final class GaugeViewModel {
     
-    private(set) var value: CGFloat = 100
+    private(set) var value: CGFloat = 50
     private var cancellable: AnyCancellable?
     
-    init() {
+    func startTimer() {
         cancellable = Timer.publish(
             every: 1,
             on: .main,
@@ -23,6 +23,11 @@ final class GaugeViewModel {
             .sink { [weak self] _ in
                 self?.value = CGFloat(Int.random(in: 0...100))
             }
+    }
+    
+    func stopTimer() {
+        cancellable?.cancel()
+        cancellable = nil
     }
     
 }

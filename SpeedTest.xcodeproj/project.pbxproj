@@ -7,7 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		070970942CDD296F00AE07B8 /* ShellKit in Frameworks */ = {isa = PBXBuildFile; productRef = 070970932CDD296F00AE07B8 /* ShellKit */; };
+		07349C6A2CFBB3D400003DDF /* ShellKit in Frameworks */ = {isa = PBXBuildFile; productRef = 07349C692CFBB3D400003DDF /* ShellKit */; };
+		07F978432CF0C4CD0001BA04 /* ShellKit in Frameworks */ = {isa = PBXBuildFile; productRef = 07F978422CF0C4CD0001BA04 /* ShellKit */; };
 		A912DF352C5292CA00D4AA70 /* SpeedTestCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A912DF2B2C5292CA00D4AA70 /* SpeedTestCore.framework */; };
 		A912DF642C52D5C600D4AA70 /* SpeedTestCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A912DF2B2C5292CA00D4AA70 /* SpeedTestCore.framework */; };
 		A912DF652C52D5C600D4AA70 /* SpeedTestCore.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = A912DF2B2C5292CA00D4AA70 /* SpeedTestCore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -81,7 +82,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				070970942CDD296F00AE07B8 /* ShellKit in Frameworks */,
+				07349C6A2CFBB3D400003DDF /* ShellKit in Frameworks */,
+				07F978432CF0C4CD0001BA04 /* ShellKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -173,7 +175,8 @@
 			);
 			name = SpeedTestCore;
 			packageProductDependencies = (
-				070970932CDD296F00AE07B8 /* ShellKit */,
+				07F978422CF0C4CD0001BA04 /* ShellKit */,
+				07349C692CFBB3D400003DDF /* ShellKit */,
 			);
 			productName = SpeedTestCore;
 			productReference = A912DF2B2C5292CA00D4AA70 /* SpeedTestCore.framework */;
@@ -275,7 +278,7 @@
 			);
 			mainGroup = A912DF022C52926100D4AA70;
 			packageReferences = (
-				070970922CDD296F00AE07B8 /* XCRemoteSwiftPackageReference "ShellKit" */,
+				07349C682CFBB3D400003DDF /* XCRemoteSwiftPackageReference "ShellKit" */,
 			);
 			productRefGroup = A912DF0D2C52926100D4AA70 /* Products */;
 			projectDirPath = "";
@@ -499,7 +502,7 @@
 		A912DF3D2C5292CA00D4AA70 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				BUILD_LIBRARY_FOR_DISTRIBUTION = YES;
+				BUILD_LIBRARY_FOR_DISTRIBUTION = NO;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
@@ -535,7 +538,7 @@
 		A912DF3E2C5292CA00D4AA70 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				BUILD_LIBRARY_FOR_DISTRIBUTION = YES;
+				BUILD_LIBRARY_FOR_DISTRIBUTION = NO;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
@@ -752,20 +755,24 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		070970922CDD296F00AE07B8 /* XCRemoteSwiftPackageReference "ShellKit" */ = {
+		07349C682CFBB3D400003DDF /* XCRemoteSwiftPackageReference "ShellKit" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/antoniopantaleo/ShellKit";
 			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 2.0.0;
+				branch = develop;
+				kind = branch;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		070970932CDD296F00AE07B8 /* ShellKit */ = {
+		07349C692CFBB3D400003DDF /* ShellKit */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 070970922CDD296F00AE07B8 /* XCRemoteSwiftPackageReference "ShellKit" */;
+			package = 07349C682CFBB3D400003DDF /* XCRemoteSwiftPackageReference "ShellKit" */;
+			productName = ShellKit;
+		};
+		07F978422CF0C4CD0001BA04 /* ShellKit */ = {
+			isa = XCSwiftPackageProductDependency;
 			productName = ShellKit;
 		};
 /* End XCSwiftPackageProductDependency section */

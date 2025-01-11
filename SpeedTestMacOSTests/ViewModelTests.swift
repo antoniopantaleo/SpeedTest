@@ -189,9 +189,9 @@ final class ViewModelTests: XCTestCase {
         .init(
             downlinkThroughput: 10,
             uplinkThroughput: 10,
-            startDate: .now,
-            endDate: .now.addingTimeInterval(3600),
-            testEndpoint: URL(string: "http://any-url.com")!,
+            startDate: anyDate,
+            endDate: anyDate.addingTimeInterval(3600),
+            testEndpoint: anyUrl,
             osVersion: "any os version"
         )
     }
@@ -202,7 +202,7 @@ final class ViewModelTests: XCTestCase {
     
     private var anyDate: Date { Date() }
     private var anyOSVersion: String { "any os vesrion" }
-    private var anyUrl: URL { URL(string: "any.url.com")!}
+    private var anyUrl: URL { URL(string: "any.url.com")! }
     
     private final class SpeedTesterSpy: SpeedTester {
         

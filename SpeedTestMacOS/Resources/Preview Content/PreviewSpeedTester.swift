@@ -13,6 +13,11 @@ import ShellKit
 
 final class PreviewSpeedTester: SpeedTester {
     
+    enum Outcome {
+        case success
+        case error
+    }
+    
     enum Latency {
         case immediate
         case exactely(Int)
@@ -28,21 +33,28 @@ final class PreviewSpeedTester: SpeedTester {
     }
     
     private let latency: Latency
+    private let outcome: Outcome
     
-    init(latency: Latency) {
+    init(latency: Latency, outcome: Outcome) {
         self.latency = latency
+        self.outcome = outcome
     }
     
     func performSpeedTest() async throws -> SpeedTestCore.Measurement {
         try await Task.sleep(for: .seconds(latency.value))
-        return .init(
-            downlinkThroughput: 543555550,
-            uplinkThroughput: 15555340,
-            startDate: .now,
-            endDate: .now,
-            testEndpoint: URL(string: "https://any-url.com")!,
-            osVersion: "Version"
-        )
+        switch outcome {
+        case .success:
+            return .init(
+                downlinkThroughput: 543555550,
+                uplinkThroughput: 15555340,
+                startDate: .now,
+                endDate: .now,
+                testEndpoint: URL(string: "https://any-url.com")!,
+                osVersion: "Version"
+            )
+        case .error:
+            throw NSError(domain: "any error", code: 0)
+        }
     }
     
 }
