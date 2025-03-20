@@ -40,8 +40,15 @@ struct SpeedTestMacOSApp: App {
         .commands{
             CommandGroup(replacing: .newItem) { @MainActor in
                 let isLoading = viewModel.isLoading
-                let action = isLoading ? viewModel.cancelRunningSpeedTest : viewModel.performSpeedTest
-                Button(action: action) {
+                Button(action: {
+                    if isLoading {
+                        loaderViewModel.stopTimer()
+                        viewModel.cancelRunningSpeedTest()
+                    } else  {
+                        loaderViewModel.startTimer()
+                        viewModel.performSpeedTest()
+                    }
+                }) {
                     isLoading ? Text("Cancel") : Text("Run")
                 }
                 .keyboardShortcut(isLoading ? "." : "R", modifiers: [.command])
