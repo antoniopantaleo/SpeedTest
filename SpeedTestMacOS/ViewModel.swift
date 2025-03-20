@@ -25,7 +25,7 @@ final class ViewModel {
     enum State {
         case idle
         case loading
-        case failure
+        case failure(String)
     }
     
     private(set) var isLoading: Bool = false
@@ -57,7 +57,7 @@ final class ViewModel {
                 self.measurement = measurement
             } catch {
                 guard task?.isCancelled == false else { return }
-                state = .failure
+                state = .failure(error.localizedDescription)
             }
             await MainActor.run { [weak self] in
                 self?.isLoading = false

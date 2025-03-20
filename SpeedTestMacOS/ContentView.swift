@@ -23,12 +23,16 @@ struct ContentView: View {
         VStack(spacing: 20) {
             ZStack {
                 VStack {
-                    if viewModel.state == .failure {
-                        Text("Something Failed")
+                    if case let .failure(message) = viewModel.state {
+                        Text(message)
+                            .padding(.vertical, 5)
+                            .padding(.horizontal, 3)
                             .containerRelativeFrame(.horizontal) { value, _ in
                                 value
                             }
-                            .background(.pink)
+                            .frame(minHeight: 50)
+                            .background(.pink.secondary)
+                        Spacer()
                     } else if viewModel.measurement != nil {
                         ResultView(viewModel: $viewModel)
                     }
