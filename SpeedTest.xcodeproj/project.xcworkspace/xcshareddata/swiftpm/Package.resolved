@@ -6,8 +6,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/antoniopantaleo/ShellKit",
       "state" : {
-        "branch" : "develop",
-        "revision" : "dbcf7c7e5ac6f428e7fb3ac6e4b2cc924a5b3db7"
+        "revision" : "a61f8913cc96323eff9f42c2303b9d8205d5c490",
+        "version" : "2.1.0"
       }
     }
   ],
