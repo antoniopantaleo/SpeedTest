@@ -56,7 +56,7 @@
 		07F9783E2CF093D80001BA04 /* SpeedTestMacOS.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; name = SpeedTestMacOS.xctestplan; path = SpeedTestMacOSTests/SpeedTestMacOS.xctestplan; sourceTree = "<group>"; };
 		A912DF2B2C5292CA00D4AA70 /* SpeedTestCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SpeedTestCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A912DF342C5292CA00D4AA70 /* SpeedTestCoreTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SpeedTestCoreTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		A912DF522C52D5B800D4AA70 /* SpeedTestMacOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SpeedTestMacOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A912DF522C52D5B800D4AA70 /* SpeedTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SpeedTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A9D5FABA2C58C75900C44172 /* SpeedTestMacOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SpeedTestMacOSTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -130,7 +130,7 @@
 			children = (
 				A912DF2B2C5292CA00D4AA70 /* SpeedTestCore.framework */,
 				A912DF342C5292CA00D4AA70 /* SpeedTestCoreTests.xctest */,
-				A912DF522C52D5B800D4AA70 /* SpeedTestMacOS.app */,
+				A912DF522C52D5B800D4AA70 /* SpeedTest.app */,
 				A9D5FABA2C58C75900C44172 /* SpeedTestMacOSTests.xctest */,
 			);
 			name = Products;
@@ -219,7 +219,7 @@
 			);
 			name = SpeedTestMacOS;
 			productName = SpeedTestMacOS;
-			productReference = A912DF522C52D5B800D4AA70 /* SpeedTestMacOS.app */;
+			productReference = A912DF522C52D5B800D4AA70 /* SpeedTest.app */;
 			productType = "com.apple.product-type.application";
 		};
 		A9D5FAB92C58C75900C44172 /* SpeedTestMacOSTests */ = {
@@ -620,6 +620,7 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = SpeedTest;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				INFOPLIST_KEY_UIUserInterfaceStyle = dark;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -629,7 +630,7 @@
 				MACOSX_DEPLOYMENT_TARGET = 14.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.antoniopantaleo.SpeedTest.SpeedTestMacOS;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = SpeedTest;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 			};
@@ -651,6 +652,7 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = SpeedTestMacOS/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = SpeedTest;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				INFOPLIST_KEY_UIUserInterfaceStyle = dark;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -660,7 +662,7 @@
 				MACOSX_DEPLOYMENT_TARGET = 14.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.antoniopantaleo.SpeedTest.SpeedTestMacOS;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = SpeedTest;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 			};

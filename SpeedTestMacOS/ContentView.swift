@@ -66,7 +66,7 @@ struct ContentView: View {
                             }
                             .frame(width: 130, height: 130)
                             .padding(.bottom)
-                        Text("Speed Test")
+                        Text("SpeedTest")
                             .foregroundStyle(.primary)
                             .blur(radius: viewModel.isLoading ? 10 : 0)
                             .animation(.easeInOut.speed(0.5), value: viewModel.isLoading)
