@@ -59,13 +59,6 @@ struct SpeedTestMacOSApp: App {
                 Button("About SpeedTest") {
                     NSApplication.shared.orderFrontStandardAboutPanel(
                         options: [
-                            .credits: NSAttributedString(
-                                string: "Hello world",
-                                attributes: [
-                                    .font: NSFont.boldSystemFont(
-                                    ofSize: NSFont.smallSystemFontSize)
-                                ]
-                            ),
                             NSApplication.AboutPanelOptionKey(rawValue: "Copyright"): "© 2024-2025 Antonio Pantaleo"
                         ]
                     )
