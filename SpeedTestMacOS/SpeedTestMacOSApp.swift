@@ -49,7 +49,7 @@ struct SpeedTestMacOSApp: App {
                         viewModel.performSpeedTest()
                     }
                 }) {
-                    isLoading ? Text("Cancel") : Text("Run")
+                    isLoading ? Text("LOADING.CANCEL") : Text("MAIN.BUTTON.RUN")
                 }
                 .keyboardShortcut(isLoading ? "." : "R", modifiers: [.command])
             }

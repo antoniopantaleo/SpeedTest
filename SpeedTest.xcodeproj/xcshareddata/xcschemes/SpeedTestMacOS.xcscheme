@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "A912DF512C52D5B800D4AA70"
-               BuildableName = "SpeedTestMacOS.app"
+               BuildableName = "SpeedTest.app"
                BlueprintName = "SpeedTestMacOS"
                ReferencedContainer = "container:SpeedTest.xcodeproj">
             </BuildableReference>
@@ -38,6 +38,7 @@
       buildConfiguration = "Debug"
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
+      language = "en"
       launchStyle = "0"
       useCustomWorkingDirectory = "NO"
       ignoresPersistentStateOnLaunch = "NO"
@@ -49,7 +50,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "A912DF512C52D5B800D4AA70"
-            BuildableName = "SpeedTestMacOS.app"
+            BuildableName = "SpeedTest.app"
             BlueprintName = "SpeedTestMacOS"
             ReferencedContainer = "container:SpeedTest.xcodeproj">
          </BuildableReference>
@@ -66,7 +67,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "A912DF512C52D5B800D4AA70"
-            BuildableName = "SpeedTestMacOS.app"
+            BuildableName = "SpeedTest.app"
             BlueprintName = "SpeedTestMacOS"
             ReferencedContainer = "container:SpeedTest.xcodeproj">
          </BuildableReference>

@@ -20,7 +20,7 @@ struct ResultView: View {
                 VStack(alignment: .listRowSeparatorLeading) {
                     Label(
                         title: {
-                            Text("Download")
+                            Text("MAIN.DOWNLOAD")
                                 .foregroundStyle(.secondary)
                         },
                         icon: {
@@ -42,7 +42,7 @@ struct ResultView: View {
                 VStack(alignment: .listRowSeparatorLeading) {
                     Label(
                         title: {
-                            Text("Upload")
+                            Text("MAIN.UPLOAD")
                                 .foregroundStyle(.secondary)
                         },
                         icon: {

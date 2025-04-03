@@ -36,53 +36,57 @@ struct ContentView: View {
                     } else if viewModel.measurement != nil {
                         ResultView(viewModel: $viewModel)
                     }
-                    ContentUnavailableView(label: {
-                        Circle()
-                            .stroke(lineWidth: 5)
-                            .aspectRatio(contentMode: .fit)
-                            .foregroundStyle(.purple)
-                            .blurredBackground(.purple)
-                            .clipShape(Circle())
-                            .shadow(radius: 8, y: 5)
-                            .scaleEffect(viewModel.isLoading ? 11 : 1)
-                        
-                            .overlay {
-                                Text("RUN")
-                                    .foregroundStyle(.purple)
-                                    .fontWeight(.bold)
-                                    .shadow(
-                                        radius: 8,
-                                        y: 15
-                                    )
-                                    .blur(radius: viewModel.isLoading ? 10 : 0)
-                                    .animation(.easeInOut.speed(0.5), value: viewModel.isLoading)
-                                    .opacity(viewModel.isLoading ? 0 : 1)
-                                    .animation(.easeInOut.speed(0.5).delay(0.2), value: viewModel.isLoading)
+                    ContentUnavailableView(
+                        label: {
+                            Circle()
+                                .stroke(lineWidth: 5)
+                                .aspectRatio(contentMode: .fit)
+                                .foregroundStyle(.purple)
+                                .blurredBackground(.purple)
+                                .clipShape(Circle())
+                                .shadow(radius: 8, y: 5)
+                                .scaleEffect(viewModel.isLoading ? 11 : 1)
+                            
+                                .overlay {
+                                    Text("MAIN.BUTTON.RUN")
+                                        .foregroundStyle(.purple)
+                                        .fontWeight(.bold)
+                                        .shadow(
+                                            radius: 8,
+                                            y: 15
+                                        )
+                                        .blur(radius: viewModel.isLoading ? 10 : 0)
+                                        .animation(.easeInOut.speed(0.5), value: viewModel.isLoading)
+                                        .opacity(viewModel.isLoading ? 0 : 1)
+                                        .animation(.easeInOut.speed(0.5).delay(0.2), value: viewModel.isLoading)
+                                }
+                                .contentShape(Circle())
+                                .onTapGesture {
+                                    loaderViewModel.startTimer()
+                                    viewModel.performSpeedTest()
+                                }
+                                .frame(width: 130, height: 130)
+                                .padding(.bottom)
+                            Text("SpeedTest")
+                                .foregroundStyle(.primary)
+                                .blur(radius: viewModel.isLoading ? 10 : 0)
+                                .animation(.easeInOut.speed(0.5), value: viewModel.isLoading)
+                                .opacity(viewModel.isLoading ? 0 : 1)
+                                .animation(.easeInOut.speed(0.5).delay(0.2), value: viewModel.isLoading)
+                            
+                            
+                        },
+                        description: {
+                            Text("MAIN.SUBTITLE")
+                                .padding(.bottom)
+                                .blur(radius: viewModel.isLoading ? 10 : 0)
+                                .animation(.easeInOut.speed(0.5), value: viewModel.isLoading)
+                                .opacity(viewModel.isLoading ? 0 : 1)
+                                .animation(.easeInOut.speed(0.5).delay(0.2), value: viewModel.isLoading)
+                            HStack(spacing: 0) {
+                                Text("MAIN.CHECKOUT")
+                                Text("**[Github](https://github.com/antoniopantaleo/SpeedTest)**")
                             }
-                            .contentShape(Circle())
-                            .onTapGesture {
-                                loaderViewModel.startTimer()
-                                viewModel.performSpeedTest()
-                            }
-                            .frame(width: 130, height: 130)
-                            .padding(.bottom)
-                        Text("SpeedTest")
-                            .foregroundStyle(.primary)
-                            .blur(radius: viewModel.isLoading ? 10 : 0)
-                            .animation(.easeInOut.speed(0.5), value: viewModel.isLoading)
-                            .opacity(viewModel.isLoading ? 0 : 1)
-                            .animation(.easeInOut.speed(0.5).delay(0.2), value: viewModel.isLoading)
-                        
-                        
-                    }, description: {
-                        Text("Run your first speed test and check your connection")
-                            .padding(.bottom)
-                            .blur(radius: viewModel.isLoading ? 10 : 0)
-                            .animation(.easeInOut.speed(0.5), value: viewModel.isLoading)
-                            .opacity(viewModel.isLoading ? 0 : 1)
-                            .animation(.easeInOut.speed(0.5).delay(0.2), value: viewModel.isLoading)
-                        
-                        Text("Checkout on **[GitHub](https://github.com/antoniopantaleo/SpeedTest)**")
                             .padding(.bottom)
                             .blur(radius: viewModel.isLoading ? 10 : 0)
                             .animation(.easeInOut.speed(0.5), value: viewModel.isLoading)
@@ -102,7 +106,7 @@ struct ContentView: View {
                         viewModel.cancelRunningSpeedTest()
                     }
                     ) {
-                        Text("Cancel")
+                        Text("LOADING.CANCEL")
                             .fontWeight(.semibold)
                             .padding(.horizontal)
                             .padding(.vertical, 5)
